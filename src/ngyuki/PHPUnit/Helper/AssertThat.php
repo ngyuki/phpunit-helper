@@ -28,7 +28,7 @@ abstract class AssertThat
 
             $ref = new \ReflectionMethod('PHPUnit_Util_GlobalState', 'addDirectoryContainingClassToPHPUnitFilesList');
             $ref->setAccessible(true);
-            $ref->invoke(null, __CLASS__);
+            //$ref->invoke(null, __CLASS__);
         }
     }
 }

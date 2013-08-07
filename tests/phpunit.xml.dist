@@ -3,6 +3,9 @@
     xsi:noNamespaceSchemaLocation="https://raw.github.com/sebastianbergmann/phpunit/master/phpunit.xsd"
     bootstrap="./bootstrap.php"
 >
+    <php><!--
+        <env name="PHPUNIT_DISABLE_TRACE" value="0"/>
+    --></php>
     <testsuites>
         <testsuite name="tests">
             <directory>./</directory>

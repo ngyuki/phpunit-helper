@@ -21,9 +21,9 @@ class AssertChain extends AssertChainBase
      */
     public function selectCount($selector, $count, $isHtml = true)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'ngyuki\PHPUnit\Helper\Assert::selectCount', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'ngyuki\PHPUnit\Helper\Assert::selectCount', func_get_args()
+        ));
         return $this;
     }
 
@@ -37,9 +37,9 @@ class AssertChain extends AssertChainBase
      */
     public function selectEquals($selector, $content, $count = true, $isHtml = true)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'ngyuki\PHPUnit\Helper\Assert::selectEquals', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'ngyuki\PHPUnit\Helper\Assert::selectEquals', func_get_args()
+        ));
         return $this;
     }
 
@@ -53,9 +53,9 @@ class AssertChain extends AssertChainBase
      */
     public function selectRegExp($selector, $pattern, $count = true, $isHtml = true)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'ngyuki\PHPUnit\Helper\Assert::selectRegExp', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'ngyuki\PHPUnit\Helper\Assert::selectRegExp', func_get_args()
+        ));
         return $this;
     }
 
@@ -67,9 +67,9 @@ class AssertChain extends AssertChainBase
      */
     public function isTrue()
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::isTrue', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::isTrue', func_get_args()
+        ));
         return $this;
     }
 
@@ -81,9 +81,9 @@ class AssertChain extends AssertChainBase
      */
     public function callback($callback)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::callback', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::callback', func_get_args()
+        ));
         return $this;
     }
 
@@ -95,9 +95,9 @@ class AssertChain extends AssertChainBase
      */
     public function isFalse()
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::isFalse', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::isFalse', func_get_args()
+        ));
         return $this;
     }
 
@@ -109,9 +109,9 @@ class AssertChain extends AssertChainBase
      */
     public function isJson()
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::isJson', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::isJson', func_get_args()
+        ));
         return $this;
     }
 
@@ -123,9 +123,9 @@ class AssertChain extends AssertChainBase
      */
     public function isNull()
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::isNull', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::isNull', func_get_args()
+        ));
         return $this;
     }
 
@@ -139,9 +139,9 @@ class AssertChain extends AssertChainBase
      */
     public function attribute(\PHPUnit_Framework_Constraint $constraint, $attributeName)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::attribute', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::attribute', func_get_args()
+        ));
         return $this;
     }
 
@@ -156,9 +156,9 @@ class AssertChain extends AssertChainBase
      */
     public function contains($value, $checkForObjectIdentity = true)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::contains', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::contains', func_get_args()
+        ));
         return $this;
     }
 
@@ -172,9 +172,9 @@ class AssertChain extends AssertChainBase
      */
     public function containsOnly($type)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::containsOnly', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::containsOnly', func_get_args()
+        ));
         return $this;
     }
 
@@ -187,9 +187,9 @@ class AssertChain extends AssertChainBase
      */
     public function containsOnlyInstancesOf($classname)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::containsOnlyInstancesOf', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::containsOnlyInstancesOf', func_get_args()
+        ));
         return $this;
     }
 
@@ -202,9 +202,9 @@ class AssertChain extends AssertChainBase
      */
     public function arrayHasKey($key)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::arrayHasKey', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::arrayHasKey', func_get_args()
+        ));
         return $this;
     }
 
@@ -221,9 +221,9 @@ class AssertChain extends AssertChainBase
      */
     public function equalTo($value, $delta = 0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::equalTo', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::equalTo', func_get_args()
+        ));
         return $this;
     }
 
@@ -243,9 +243,9 @@ class AssertChain extends AssertChainBase
      */
     public function attributeEqualTo($attributeName, $value, $delta = 0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::attributeEqualTo', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::attributeEqualTo', func_get_args()
+        ));
         return $this;
     }
 
@@ -257,9 +257,9 @@ class AssertChain extends AssertChainBase
      */
     public function isEmpty()
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::isEmpty', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::isEmpty', func_get_args()
+        ));
         return $this;
     }
 
@@ -271,9 +271,9 @@ class AssertChain extends AssertChainBase
      */
     public function fileExists()
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::fileExists', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::fileExists', func_get_args()
+        ));
         return $this;
     }
 
@@ -286,9 +286,9 @@ class AssertChain extends AssertChainBase
      */
     public function greaterThan($value)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::greaterThan', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::greaterThan', func_get_args()
+        ));
         return $this;
     }
 
@@ -303,9 +303,9 @@ class AssertChain extends AssertChainBase
      */
     public function greaterThanOrEqual($value)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::greaterThanOrEqual', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::greaterThanOrEqual', func_get_args()
+        ));
         return $this;
     }
 
@@ -318,9 +318,9 @@ class AssertChain extends AssertChainBase
      */
     public function classHasAttribute($attributeName)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::classHasAttribute', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::classHasAttribute', func_get_args()
+        ));
         return $this;
     }
 
@@ -334,9 +334,9 @@ class AssertChain extends AssertChainBase
      */
     public function classHasStaticAttribute($attributeName)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::classHasStaticAttribute', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::classHasStaticAttribute', func_get_args()
+        ));
         return $this;
     }
 
@@ -349,9 +349,9 @@ class AssertChain extends AssertChainBase
      */
     public function objectHasAttribute($attributeName)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::objectHasAttribute', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::objectHasAttribute', func_get_args()
+        ));
         return $this;
     }
 
@@ -364,9 +364,9 @@ class AssertChain extends AssertChainBase
      */
     public function identicalTo($value)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::identicalTo', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::identicalTo', func_get_args()
+        ));
         return $this;
     }
 
@@ -379,9 +379,9 @@ class AssertChain extends AssertChainBase
      */
     public function isInstanceOf($className)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::isInstanceOf', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::isInstanceOf', func_get_args()
+        ));
         return $this;
     }
 
@@ -394,9 +394,9 @@ class AssertChain extends AssertChainBase
      */
     public function isType($type)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::isType', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::isType', func_get_args()
+        ));
         return $this;
     }
 
@@ -409,9 +409,9 @@ class AssertChain extends AssertChainBase
      */
     public function lessThan($value)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::lessThan', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::lessThan', func_get_args()
+        ));
         return $this;
     }
 
@@ -426,9 +426,9 @@ class AssertChain extends AssertChainBase
      */
     public function lessThanOrEqual($value)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::lessThanOrEqual', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::lessThanOrEqual', func_get_args()
+        ));
         return $this;
     }
 
@@ -441,9 +441,9 @@ class AssertChain extends AssertChainBase
      */
     public function matchesRegularExpression($pattern)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::matchesRegularExpression', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::matchesRegularExpression', func_get_args()
+        ));
         return $this;
     }
 
@@ -456,9 +456,9 @@ class AssertChain extends AssertChainBase
      */
     public function matches($string)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::matches', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::matches', func_get_args()
+        ));
         return $this;
     }
 
@@ -471,9 +471,9 @@ class AssertChain extends AssertChainBase
      */
     public function stringStartsWith($prefix)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::stringStartsWith', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::stringStartsWith', func_get_args()
+        ));
         return $this;
     }
 
@@ -487,9 +487,9 @@ class AssertChain extends AssertChainBase
      */
     public function stringContains($string, $case = true)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::stringContains', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::stringContains', func_get_args()
+        ));
         return $this;
     }
 
@@ -502,9 +502,9 @@ class AssertChain extends AssertChainBase
      */
     public function stringEndsWith($suffix)
     {
-        Assert::assertThat($this->val, call_user_func_array(
-            'PHPUnit_Framework_Assert::stringEndsWith', func_get_args())
-        );
+        $this->assertThat($this->call(
+            'PHPUnit_Framework_Assert::stringEndsWith', func_get_args()
+        ));
         return $this;
     }
 }

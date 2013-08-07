@@ -51,6 +51,11 @@ class AssertChainTest extends \PHPUnit_Framework_TestCase
      */
     function trace_()
     {
+        if (getenv('PHPUNIT_DISABLE_TRACE'))
+        {
+            return;
+        }
+
         $ref = new \ReflectionClass(AssertThat::given(null));
         $it = new \FilesystemIterator(dirname($ref->getFileName()));
 
