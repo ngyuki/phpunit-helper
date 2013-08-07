@@ -19,11 +19,11 @@ class ChainTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException PHPUnit_Framework_AssertionFailedError
-     * @expectedExceptionMessage not equal
+     * @expectedExceptionMessage 8045610545
      */
     function equalTo_fail()
     {
-        AssertThat::given(123)->equalTo("not equal");
+        AssertThat::given(123)->equalTo("8045610545");
     }
 
     /**
@@ -38,12 +38,12 @@ class ChainTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException PHPUnit_Framework_AssertionFailedError
-     * @expectedExceptionMessage not has key
+     * @expectedExceptionMessage fyfuy
      */
     function arrayHasKey_fail()
     {
         $a = array('a' => 1, 'b' => 2, 'c' => 3);
-        AssertThat::given($a)->arrayHasKey('a')->arrayHasKey('b')->arrayHasKey('not has key');
+        AssertThat::given($a)->arrayHasKey('a')->arrayHasKey('b')->arrayHasKey('fyfuy');
     }
 
     /**

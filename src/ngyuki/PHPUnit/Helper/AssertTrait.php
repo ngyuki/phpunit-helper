@@ -8,7 +8,7 @@ namespace ngyuki\PHPUnit\Helper;
 /**
  * @author ngyuki
  */
-abstract class AssertThat
+trait AssertTrait
 {
     public static function given($val)
     {

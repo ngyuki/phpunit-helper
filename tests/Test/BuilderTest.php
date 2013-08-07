@@ -2,7 +2,6 @@
 namespace Test;
 
 use ngyuki\PHPUnit\Helper\Builder;
-use ngyuki\PHPUnit\Helper\AssertChain;
 
 /**
  * @author ngyuki
