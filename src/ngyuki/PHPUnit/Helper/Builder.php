@@ -30,7 +30,7 @@ class Builder
 
     protected function collect()
     {
-        $assert = new \ReflectionClass(__NAMESPACE__ . '\\Assert');
+        $assert = new \ReflectionClass(__NAMESPACE__ . '\\Assertion');
 
         $funcs = array();
 
