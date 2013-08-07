@@ -1,0 +1,22 @@
+{
+    "name": "ngyuki/phpunit-helper",
+    "type": "library",
+    "description": "phpunit-helper",
+    "keywords": [],
+    "homepage": "https://github.com/ngyuki/phpunit-helper",
+    "license": "MIT",
+    "authors": [
+        { "name": "ngyuki", "email": "ngyuki.ts@gmail.com" }
+    ],
+    "autoload": {
+        "psr-0": {
+            "ngyuki\\PHPUnit\\Helper": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}

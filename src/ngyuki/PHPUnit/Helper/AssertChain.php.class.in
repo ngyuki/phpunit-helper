@@ -1,0 +1,16 @@
+<?php
+/**
+ * This file is generated from PHPUnit_Framework_Assert.
+ *
+ * @author ngyuki
+ */
+
+namespace ngyuki\PHPUnit\Helper;
+
+/**
+ * @author ngyuki
+ */
+class AssertChain extends AssertChainBase
+{
+{%methods}
+}
