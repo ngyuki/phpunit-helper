@@ -123,7 +123,7 @@ class Builder
                 $str .= 'array ';
             }
 
-            if ($param->isCallable())
+            if (method_exists($param, 'isCallable') && $param->isCallable())
             {
                 $str .= 'callable ';
             }

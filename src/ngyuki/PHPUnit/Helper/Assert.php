@@ -62,7 +62,7 @@ abstract class Assert extends \PHPUnit_Framework_Assert
     public static function selectCount($selector, $count, $isHtml = true)
     {
         return new Constraint\Callback(function($actual) use ($selector, $count, $isHtml) {
-            self::assertSelectCount($selector, $count, $actual, '', $isHtml);
+            Assert::assertSelectCount($selector, $count, $actual, '', $isHtml);
             return true;
         });
     }
@@ -78,7 +78,7 @@ abstract class Assert extends \PHPUnit_Framework_Assert
     public static function selectEquals($selector, $content, $count = true, $isHtml = true)
     {
         return new Constraint\Callback(function($actual) use ($selector, $content, $count, $isHtml) {
-            self::assertSelectEquals($selector, $content, $count, $actual, '', $isHtml);
+            Assert::assertSelectEquals($selector, $content, $count, $actual, '', $isHtml);
             return true;
         });
     }
@@ -94,7 +94,7 @@ abstract class Assert extends \PHPUnit_Framework_Assert
     public static function selectRegExp($selector, $pattern, $count = true, $isHtml = true)
     {
         return new Constraint\Callback(function($actual) use ($selector, $pattern, $count, $isHtml) {
-            self::assertSelectRegExp($selector, $pattern, $count, $actual, '', $isHtml);
+            Assert::assertSelectRegExp($selector, $pattern, $count, $actual, '', $isHtml);
             return true;
         });
     }

@@ -26,11 +26,9 @@ abstract class AssertThat
 
             \PHPUnit_Util_GlobalState::phpunitFiles();
 
-            $func = function () {
-                self::addDirectoryContainingClassToPHPUnitFilesList(__CLASS__);
-            };
-
-            call_user_func($func->bindTo(null, 'PHPUnit_Util_GlobalState'));
+            $ref = new \ReflectionMethod('PHPUnit_Util_GlobalState', 'addDirectoryContainingClassToPHPUnitFilesList');
+            $ref->setAccessible(true);
+            $ref->invoke(null, __CLASS__);
         }
     }
 }
