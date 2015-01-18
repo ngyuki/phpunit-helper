@@ -1,8 +1,0 @@
-    {%doc}
-    public function {%name}({%args})
-    {
-        $this->assertThat(call_user_func_array(
-            '{%class}::{%name}', func_get_args()
-        ));
-        return $this;
-    }

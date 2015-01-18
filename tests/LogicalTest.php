@@ -32,13 +32,11 @@ class LogicalTest extends \PHPUnit_Framework_TestCase
     function chain_()
     {
         AssertThat::given(9)
-            ->not()
-                ->equalTo(1)
-                ->equalTo(2)
-                ->equalTo(null)
-                ->equalTo(false)
-            ->be()
-                ->equalTo(9)
+            ->not()->equalTo(1)
+            ->not()->equalTo(2)
+            ->not()->equalTo(null)
+            ->not()->equalTo(false)
+            ->equalTo(9)
         ;
     }
 
@@ -48,13 +46,9 @@ class LogicalTest extends \PHPUnit_Framework_TestCase
     function or_()
     {
         AssertThat::given(9)
-            ->or_()
-                ->equalTo(1)
-                ->equalTo(2)
-                ->equalTo(9)
-            ->or_()
-                ->equalTo(9)
-            ->end_();
+            ->not()->equalTo(9)
+            ->logicalOr()
+            ->equalTo(9)
         ;
     }
 
@@ -66,12 +60,9 @@ class LogicalTest extends \PHPUnit_Framework_TestCase
     function or_fail()
     {
         AssertThat::given(9)
-            ->or_()
-                ->equalTo(9)
-            ->or_()
-                ->equalTo(123)
-                ->equalTo(456)
-                ->equalTo(789)
+            ->equalTo(123)
+            ->logicalOr()
+            ->equalTo(456)
         ;
     }
 
@@ -82,13 +73,9 @@ class LogicalTest extends \PHPUnit_Framework_TestCase
     function or_fail_not()
     {
         AssertThat::given(9)
-            ->or_()
-                ->not()
-                    ->equalTo(9)
-                    ->equalTo(9)
-                    ->equalTo(9)
-                ->be()
-                    ->equalTo(0)
+            ->not()->equalTo(9)
+            ->logicalOr()
+            ->equalTo(0)
         ;
     }
 }

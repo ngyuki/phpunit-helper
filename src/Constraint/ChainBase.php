@@ -14,7 +14,7 @@ class ChainBase extends \PHPUnit_Framework_Constraint_Or
         $this->constraints[] = $this->current;
     }
 
-    protected function chain(PHPUnit_Framework_Constraint $c)
+    protected function call(PHPUnit_Framework_Constraint $c)
     {
         if ($this->not) {
             $c = new \PHPUnit_Framework_Constraint_Not($c);
@@ -22,6 +22,11 @@ class ChainBase extends \PHPUnit_Framework_Constraint_Or
         }
         $this->current->addConstraint($c);
         return $this;
+    }
+
+    public function addConstraint(PHPUnit_Framework_Constraint $c)
+    {
+        return $this->call($c);
     }
 
     public function not()

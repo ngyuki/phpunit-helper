@@ -1,11 +1,9 @@
 <?php
-namespace Test;
+namespace Test\Constraint;
 
-use ngyuki\PHPUnitHelper\Builder;
+use ngyuki\PHPUnitHelper\Constraint\Builder;
+use ngyuki\PHPUnitHelper\Constraint\Chain;
 
-/**
- * @author ngyuki
- */
 class BuilderTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -16,7 +14,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
         $obj = new Builder();
         $out = $obj->generate();
 
-        $ref = new \ReflectionClass('ngyuki\\PHPUnitHelper\\AssertChain');
+        $ref = new \ReflectionClass(get_class(new Chain()));
         $exp = file_get_contents($ref->getFileName());
 
         assertEquals($exp, $out);
