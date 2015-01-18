@@ -1,0 +1,11 @@
+<?php
+/**
+ * This file is generated from PHPUnit_Framework_Assert.
+ */
+
+namespace ngyuki\PHPUnitHelper\Constraint;
+
+class Chain extends ChainBase
+{
+{%methods}
+}
