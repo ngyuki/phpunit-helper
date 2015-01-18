@@ -5,7 +5,7 @@
  * @author ngyuki
  */
 
-namespace ngyuki\PHPUnit\Helper;
+namespace ngyuki\PHPUnitHelper;
 
 /**
  * @author ngyuki
@@ -22,7 +22,7 @@ class AssertChain extends AssertChainBase
     public function selectCount($selector, $count, $isHtml = true)
     {
         $this->assertThat(call_user_func_array(
-            'ngyuki\PHPUnit\Helper\Assertion::selectCount', func_get_args()
+            'ngyuki\PHPUnitHelper\Assertion::selectCount', func_get_args()
         ));
         return $this;
     }
@@ -38,7 +38,7 @@ class AssertChain extends AssertChainBase
     public function selectEquals($selector, $content, $count = true, $isHtml = true)
     {
         $this->assertThat(call_user_func_array(
-            'ngyuki\PHPUnit\Helper\Assertion::selectEquals', func_get_args()
+            'ngyuki\PHPUnitHelper\Assertion::selectEquals', func_get_args()
         ));
         return $this;
     }
@@ -54,7 +54,7 @@ class AssertChain extends AssertChainBase
     public function selectRegExp($selector, $pattern, $count = true, $isHtml = true)
     {
         $this->assertThat(call_user_func_array(
-            'ngyuki\PHPUnit\Helper\Assertion::selectRegExp', func_get_args()
+            'ngyuki\PHPUnitHelper\Assertion::selectRegExp', func_get_args()
         ));
         return $this;
     }

@@ -3,12 +3,12 @@
  * @author ngyuki
  */
 
-namespace ngyuki\PHPUnit\Helper;
+namespace ngyuki\PHPUnitHelper;
 
 /**
  * @author ngyuki
  */
-abstract class AssertThat
+trait AssertTrait
 {
     public static function given($val)
     {

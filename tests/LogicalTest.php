@@ -1,7 +1,7 @@
 <?php
 namespace Test;
 
-use ngyuki\PHPUnit\Helper\AssertThat;
+use ngyuki\PHPUnitHelper\AssertThat;
 
 /**
  * @author ngyuki

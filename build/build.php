@@ -1,5 +1,5 @@
 <?php
-namespace ngyuki\PHPUnit\Helper;
+namespace ngyuki\PHPUnitHelper;
 
 require __DIR__ . '/../vendor/autoload.php';
 

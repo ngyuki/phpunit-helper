@@ -3,7 +3,7 @@
  * @author ngyuki
  */
 
-namespace ngyuki\PHPUnit\Helper\Constraint;
+namespace ngyuki\PHPUnitHelper\Constraint;
 
 /**
  * @author ngyuki

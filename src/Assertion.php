@@ -3,9 +3,9 @@
  * @author ngyuki
  */
 
-namespace ngyuki\PHPUnit\Helper;
+namespace ngyuki\PHPUnitHelper;
 
-use ngyuki\PHPUnit\Helper\Constraint;
+use ngyuki\PHPUnitHelper\Constraint;
 
 /**
  * @author ngyuki

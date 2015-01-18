@@ -9,8 +9,8 @@
         { "name": "ngyuki", "email": "ngyuki.ts@gmail.com" }
     ],
     "autoload": {
-        "psr-0": {
-            "ngyuki\\PHPUnit\\Helper": "src/"
+        "psr-4": {
+            "ngyuki\\PHPUnitHelper\\": "src/"
         }
     },
     "require": {

@@ -3,7 +3,7 @@
  * @author ngyuki
  */
 
-namespace ngyuki\PHPUnit\Helper;
+namespace ngyuki\PHPUnitHelper;
 
 /**
  * @author ngyuki

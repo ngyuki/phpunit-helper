@@ -1,8 +1,8 @@
 <?php
 namespace Test;
 
-use ngyuki\PHPUnit\Helper\AssertThat;
-use ngyuki\PHPUnit\Helper\AssertTrait;
+use ngyuki\PHPUnitHelper\AssertThat;
+use ngyuki\PHPUnitHelper\AssertTrait;
 
 /**
  * @author ngyuki
