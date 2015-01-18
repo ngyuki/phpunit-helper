@@ -3,6 +3,10 @@ namespace ngyuki\PHPUnitHelper\Constraint;
 
 use PHPUnit_Framework_Constraint;
 
+/**
+ * @property $this not
+ * @property $this or
+ */
 class ChainBase extends \PHPUnit_Framework_Constraint_Or
 {
     private $current;
@@ -14,7 +18,7 @@ class ChainBase extends \PHPUnit_Framework_Constraint_Or
         $this->constraints[] = $this->current;
     }
 
-    protected function call(PHPUnit_Framework_Constraint $c)
+    public function addConstraint(PHPUnit_Framework_Constraint $c)
     {
         if ($this->not) {
             $c = new \PHPUnit_Framework_Constraint_Not($c);
@@ -24,12 +28,7 @@ class ChainBase extends \PHPUnit_Framework_Constraint_Or
         return $this;
     }
 
-    public function addConstraint(PHPUnit_Framework_Constraint $c)
-    {
-        return $this->call($c);
-    }
-
-    public function not()
+    public function logicalNot()
     {
         $this->not = !$this->not;
         return $this;
@@ -43,5 +42,12 @@ class ChainBase extends \PHPUnit_Framework_Constraint_Or
 
     public function __get($name)
     {
+        if ($name === 'not') {
+            return $this->logicalNot();
+        } else if ($name === 'or') {
+            return $this->logicalOr();
+        } else {
+            throw new \BadMethodCallException(__METHOD__);
+        }
     }
 }

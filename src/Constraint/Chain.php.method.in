@@ -1,7 +1,7 @@
     {%doc}
     public function {%name}({%args})
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             '{%class}::{%name}', func_get_args()
         ));
         return $this;

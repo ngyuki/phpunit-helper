@@ -18,6 +18,9 @@ class Callback extends \PHPUnit_Framework_Constraint
         $this->callback = $callback;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function matches($other)
     {
         try
@@ -27,9 +30,13 @@ class Callback extends \PHPUnit_Framework_Constraint
         catch (\PHPUnit_Framework_AssertionFailedError $ex)
         {
             $this->message = $ex->toString();
+            return false;
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function toString()
     {
         return $this->message;

@@ -6,6 +6,7 @@
 namespace ngyuki\PHPUnitHelper;
 
 use ngyuki\PHPUnitHelper\Constraint;
+use PHPUnit_Framework_Constraint;
 
 /**
  * @author ngyuki
@@ -13,7 +14,7 @@ use ngyuki\PHPUnitHelper\Constraint;
 abstract class Assertion extends \PHPUnit_Framework_Assert
 {
     /**
-     * ignore generate
+     * {@inheritdoc}
      */
     public static function logicalAnd()
     {
@@ -21,7 +22,7 @@ abstract class Assertion extends \PHPUnit_Framework_Assert
     }
 
     /**
-     * ignore generate
+     * {@inheritdoc}
      */
     public static function logicalOr()
     {
@@ -29,15 +30,15 @@ abstract class Assertion extends \PHPUnit_Framework_Assert
     }
 
     /**
-     * ignore generate
+     * {@inheritdoc}
      */
-    public static function logicalNot(\PHPUnit_Framework_Constraint $constraint)
+    public static function logicalNot(PHPUnit_Framework_Constraint $constraint)
     {
         return call_user_func_array(array(get_parent_class(), __FUNCTION__), func_get_args());
     }
 
     /**
-     * ignore generate
+     * {@inheritdoc}
      */
     public static function logicalXor()
     {
@@ -45,7 +46,7 @@ abstract class Assertion extends \PHPUnit_Framework_Assert
     }
 
     /**
-     * ignore generate
+     * {@inheritdoc}
      */
     public static function anything()
     {
@@ -57,7 +58,7 @@ abstract class Assertion extends \PHPUnit_Framework_Assert
      * @param integer $count
      * @param boolean $isHtml
      *
-     * @return PHPUnit_Framework_Constraint_Callback
+     * @return PHPUnit_Framework_Constraint
      */
     public static function selectCount($selector, $count, $isHtml = true)
     {
@@ -73,7 +74,7 @@ abstract class Assertion extends \PHPUnit_Framework_Assert
      * @param integer $count
      * @param boolean $isHtml
      *
-     * @return PHPUnit_Framework_Constraint_Callback
+     * @return PHPUnit_Framework_Constraint
      */
     public static function selectEquals($selector, $content, $count = true, $isHtml = true)
     {
@@ -89,7 +90,7 @@ abstract class Assertion extends \PHPUnit_Framework_Assert
      * @param integer $count
      * @param boolean $isHtml
      *
-     * @return PHPUnit_Framework_Constraint_Callback
+     * @return PHPUnit_Framework_Constraint
      */
     public static function selectRegExp($selector, $pattern, $count = true, $isHtml = true)
     {

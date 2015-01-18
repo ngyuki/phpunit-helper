@@ -2,6 +2,7 @@
 namespace Test;
 
 use ngyuki\PHPUnitHelper\AssertThat;
+use PHPUnit_Framework_AssertionFailedError;
 
 /**
  * @author ngyuki
@@ -38,12 +39,12 @@ class ChainTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException PHPUnit_Framework_AssertionFailedError
-     * @expectedExceptionMessage fyfuy
+     * @expectedExceptionMessage abc
      */
     function arrayHasKey_fail()
     {
         $a = array('a' => 1, 'b' => 2, 'c' => 3);
-        AssertThat::given($a)->arrayHasKey('a')->arrayHasKey('b')->arrayHasKey('fyfuy');
+        AssertThat::given($a)->arrayHasKey('a')->arrayHasKey('b')->arrayHasKey('abc');
     }
 
     /**
@@ -72,6 +73,8 @@ class ChainTest extends \PHPUnit_Framework_TestCase
      * @test
      * @expectedException PHPUnit_Framework_AssertionFailedError
      * @dataProvider selectCount_fail_d
+     * @param $selector
+     * @param $count
      */
     function selectCount_fail($selector, $count)
     {
@@ -108,9 +111,7 @@ class ChainTest extends \PHPUnit_Framework_TestCase
             </body></html>
         ';
 
-        AssertThat::given($val)
-            ->selectEquals('div', "hoge")
-        ;
+        AssertThat::given($val)->selectEquals('div', "hoge");
     }
 
     /**
@@ -125,9 +126,7 @@ class ChainTest extends \PHPUnit_Framework_TestCase
             </body></html>
         ';
 
-        AssertThat::given($val)
-            ->selectEquals('div', "xxxx")
-        ;
+        AssertThat::given($val)->selectEquals('div', "xxx");
     }
 
     /**

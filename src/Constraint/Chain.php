@@ -16,7 +16,7 @@ class Chain extends ChainBase
      */
     public function selectCount($selector, $count, $isHtml = true)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'ngyuki\PHPUnitHelper\Assertion::selectCount', func_get_args()
         ));
         return $this;
@@ -32,7 +32,7 @@ class Chain extends ChainBase
      */
     public function selectEquals($selector, $content, $count = true, $isHtml = true)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'ngyuki\PHPUnitHelper\Assertion::selectEquals', func_get_args()
         ));
         return $this;
@@ -48,7 +48,7 @@ class Chain extends ChainBase
      */
     public function selectRegExp($selector, $pattern, $count = true, $isHtml = true)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'ngyuki\PHPUnitHelper\Assertion::selectRegExp', func_get_args()
         ));
         return $this;
@@ -62,7 +62,7 @@ class Chain extends ChainBase
      */
     public function isTrue()
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::isTrue', func_get_args()
         ));
         return $this;
@@ -76,7 +76,7 @@ class Chain extends ChainBase
      */
     public function callback($callback)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::callback', func_get_args()
         ));
         return $this;
@@ -90,7 +90,7 @@ class Chain extends ChainBase
      */
     public function isFalse()
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::isFalse', func_get_args()
         ));
         return $this;
@@ -104,7 +104,7 @@ class Chain extends ChainBase
      */
     public function isJson()
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::isJson', func_get_args()
         ));
         return $this;
@@ -118,7 +118,7 @@ class Chain extends ChainBase
      */
     public function isNull()
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::isNull', func_get_args()
         ));
         return $this;
@@ -134,7 +134,7 @@ class Chain extends ChainBase
      */
     public function attribute(\PHPUnit_Framework_Constraint $constraint, $attributeName)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::attribute', func_get_args()
         ));
         return $this;
@@ -151,7 +151,7 @@ class Chain extends ChainBase
      */
     public function contains($value, $checkForObjectIdentity = true)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::contains', func_get_args()
         ));
         return $this;
@@ -167,7 +167,7 @@ class Chain extends ChainBase
      */
     public function containsOnly($type)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::containsOnly', func_get_args()
         ));
         return $this;
@@ -182,7 +182,7 @@ class Chain extends ChainBase
      */
     public function containsOnlyInstancesOf($classname)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::containsOnlyInstancesOf', func_get_args()
         ));
         return $this;
@@ -197,7 +197,7 @@ class Chain extends ChainBase
      */
     public function arrayHasKey($key)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::arrayHasKey', func_get_args()
         ));
         return $this;
@@ -216,7 +216,7 @@ class Chain extends ChainBase
      */
     public function equalTo($value, $delta = 0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::equalTo', func_get_args()
         ));
         return $this;
@@ -238,7 +238,7 @@ class Chain extends ChainBase
      */
     public function attributeEqualTo($attributeName, $value, $delta = 0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::attributeEqualTo', func_get_args()
         ));
         return $this;
@@ -252,7 +252,7 @@ class Chain extends ChainBase
      */
     public function isEmpty()
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::isEmpty', func_get_args()
         ));
         return $this;
@@ -266,7 +266,7 @@ class Chain extends ChainBase
      */
     public function fileExists()
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::fileExists', func_get_args()
         ));
         return $this;
@@ -281,7 +281,7 @@ class Chain extends ChainBase
      */
     public function greaterThan($value)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::greaterThan', func_get_args()
         ));
         return $this;
@@ -298,7 +298,7 @@ class Chain extends ChainBase
      */
     public function greaterThanOrEqual($value)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::greaterThanOrEqual', func_get_args()
         ));
         return $this;
@@ -313,7 +313,7 @@ class Chain extends ChainBase
      */
     public function classHasAttribute($attributeName)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::classHasAttribute', func_get_args()
         ));
         return $this;
@@ -329,7 +329,7 @@ class Chain extends ChainBase
      */
     public function classHasStaticAttribute($attributeName)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::classHasStaticAttribute', func_get_args()
         ));
         return $this;
@@ -344,7 +344,7 @@ class Chain extends ChainBase
      */
     public function objectHasAttribute($attributeName)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::objectHasAttribute', func_get_args()
         ));
         return $this;
@@ -359,7 +359,7 @@ class Chain extends ChainBase
      */
     public function identicalTo($value)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::identicalTo', func_get_args()
         ));
         return $this;
@@ -374,7 +374,7 @@ class Chain extends ChainBase
      */
     public function isInstanceOf($className)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::isInstanceOf', func_get_args()
         ));
         return $this;
@@ -389,7 +389,7 @@ class Chain extends ChainBase
      */
     public function isType($type)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::isType', func_get_args()
         ));
         return $this;
@@ -404,7 +404,7 @@ class Chain extends ChainBase
      */
     public function lessThan($value)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::lessThan', func_get_args()
         ));
         return $this;
@@ -421,7 +421,7 @@ class Chain extends ChainBase
      */
     public function lessThanOrEqual($value)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::lessThanOrEqual', func_get_args()
         ));
         return $this;
@@ -436,7 +436,7 @@ class Chain extends ChainBase
      */
     public function matchesRegularExpression($pattern)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::matchesRegularExpression', func_get_args()
         ));
         return $this;
@@ -451,7 +451,7 @@ class Chain extends ChainBase
      */
     public function matches($string)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::matches', func_get_args()
         ));
         return $this;
@@ -466,7 +466,7 @@ class Chain extends ChainBase
      */
     public function stringStartsWith($prefix)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::stringStartsWith', func_get_args()
         ));
         return $this;
@@ -482,7 +482,7 @@ class Chain extends ChainBase
      */
     public function stringContains($string, $case = true)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::stringContains', func_get_args()
         ));
         return $this;
@@ -497,7 +497,7 @@ class Chain extends ChainBase
      */
     public function stringEndsWith($suffix)
     {
-        $this->call(call_user_func_array(
+        $this->addConstraint(call_user_func_array(
             'PHPUnit_Framework_Assert::stringEndsWith', func_get_args()
         ));
         return $this;

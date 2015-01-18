@@ -1,8 +1,8 @@
 <?php
 namespace Test;
 
-use ngyuki\PHPUnitHelper\AssertThat;
 use ngyuki\PHPUnitHelper\AssertTrait;
+use PHPUnit_Framework_AssertionFailedError;
 
 /**
  * @author ngyuki

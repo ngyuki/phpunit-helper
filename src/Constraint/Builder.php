@@ -29,16 +29,14 @@ class Builder
         foreach ($assert->getMethods() as $method) {
             $doc = $method->getDocComment();
 
-            if (preg_match('/@return\s+(\w+)/', $doc, $m) == 0) {
+            if (preg_match('/@return\s+([\w\\\\]+)/', $doc, $m) == 0) {
                 continue;
             }
 
             list ($match, $class) = $m;
 
             try {
-                $cons = new \ReflectionClass($class);
-
-                if (!$cons->isSubclassOf('PHPUnit_Framework_Constraint')) {
+                if (!is_a($class, 'PHPUnit_Framework_Constraint', true)) {
                     continue;
                 }
             } catch (\ReflectionException $ex) {

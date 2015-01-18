@@ -20,7 +20,7 @@ class ChainTest extends \PHPUnit_Framework_TestCase
     public function not()
     {
         $c = new Chain();
-        assertThat(1, $c->not()->equalTo(2)->equalTo(1)->not()->isEmpty());
+        assertThat(1, $c->not->equalTo(2)->equalTo(1)->not->isEmpty());
     }
 
     /**
@@ -29,8 +29,8 @@ class ChainTest extends \PHPUnit_Framework_TestCase
     public function or_()
     {
         $c = new Chain();
-        assertThat(1, $c->equalTo(2)->logicalOr()->equalTo(1));
-        assertThat(2, $c->equalTo(1)->logicalOr()->equalTo(2));
+        assertThat(1, $c->equalTo(2)->or->equalTo(1));
+        assertThat(2, $c->equalTo(1)->or->equalTo(2));
     }
 
     /**
@@ -39,7 +39,7 @@ class ChainTest extends \PHPUnit_Framework_TestCase
     public function or_not()
     {
         $c = new Chain();
-        assertThat(1, $c->equalTo(2)->logicalOr()->not()->equalTo(3));
-        assertThat(1, $c->not()->equalTo(3)->logicalOr()->equalTo(2));
+        assertThat(1, $c->equalTo(2)->or->not->equalTo(3));
+        assertThat(1, $c->not->equalTo(3)->or->equalTo(2));
     }
 }
